@@ -19,6 +19,7 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 python -m job_command_center.cli init-db
 python -m job_command_center.cli ingest-sample
+python -m job_command_center.cli ingest-jobs-sample
 streamlit run src/job_command_center/dashboard.py
 ```
 
@@ -37,3 +38,16 @@ Sponsor Score is weighted toward recent PERM activity, then H-1B filing volume, 
 ## Privacy
 
 All data stays local in `data/job_command_center.sqlite3`. Phase 1 does not require secrets. Future API keys should live in `.env`, never in git.
+
+## Phase 2-9 Local MVP
+
+The app now includes local-first scaffolding for the rest of the command center:
+
+- job import/scoring with sponsorship exclusions
+- application pipeline stages and dashboard summaries
+- guarded resume/cover-letter draft records
+- outreach draft generation
+- deterministic email classification
+- interview prep pack generation
+
+Live ATS discovery, Anthropic scoring/tailoring, Gmail OAuth, and Playwright form-filling are intentionally behind future integration points so no external services receive resume or email data without explicit configuration.
