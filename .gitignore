@@ -1,0 +1,11 @@
+.env
+.venv/
+.venv312/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+data/*.sqlite3
+data/source_cache/
+data/master_resume.docx
+exports/
